@@ -179,5 +179,47 @@ document.querySelector('.nav-item:nth-child(4)').addEventListener('click', () =>
   showWindow('window-sketch');
 });
 
+//random positioning the windows
+
+function randomizeWindowPositionOnLoad() {
+  const windows = document.querySelectorAll('.window');
+
+  windows.forEach((windowElement) => {
+    const viewportWidth = window.innerWidth;
+    const windowWidth = windowElement.offsetWidth;
+
+    const randomLeft = Math.random() * (viewportWidth - windowWidth);
+    windowElement.style.left = `${randomLeft}px`;
+
+    const windowHeight = windowElement.offsetHeight;
+    const randomTop = Math.random() * (window.innerHeight - windowHeight);
+    windowElement.style.top = `${Math.max(randomTop, 0)}px`;
+  });
+}
+
+window.addEventListener('load', randomizeWindowPositionOnLoad);
+
+// Reset Button
+
+function randomizeWindowPosition() {
+  const windows = document.querySelectorAll('.window');
+
+  windows.forEach((windowElement) => {
+    const viewportWidth = window.innerWidth;
+    const windowWidth = windowElement.offsetWidth;
 
 
+    const randomLeft = Math.random() * (viewportWidth - windowWidth);
+    windowElement.style.left = `${randomLeft}px`;
+
+    const windowHeight = windowElement.offsetHeight;
+    const randomTop = Math.random() * (window.innerHeight - windowHeight);
+    windowElement.style.top = `${Math.max(randomTop, 0)}px`;
+  });
+}
+
+window.addEventListener('load', randomizeWindowPosition);
+
+document.getElementById('reset-button').addEventListener('click', () => {
+  randomizeWindowPosition(); // Re-run random positioning on click
+});
