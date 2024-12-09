@@ -52,11 +52,13 @@ textarea {
 
 /* Window */
 .window {
+  top: 15%;
     width: 500px;
     height: 600px;
     background-color: black;
     border: 5px solid #fff;
     position: absolute;
+    
   }
   .window-bar {
     color: black;
@@ -212,3 +214,36 @@ textarea {
     background-color: white;
     color: black;
 }
+
+/* Botton Navvigation Bar */
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 30px;
+  left: 35%;
+  width: 30%;
+  background-color: black;
+  padding: 5px 0;
+  margin: 0;
+  z-index: 10001;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-icon {
+  width:40px;
+  height: auto;
+  margin-bottom: 10px; 
+}
+
+.nav-label {
+  color: white;
+}
+

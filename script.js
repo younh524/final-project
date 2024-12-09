@@ -153,3 +153,31 @@ function draw(e) { //drawing properties
 function clearCanvas() { //clearing tthe canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
+
+// Bottom Navigation Bar
+
+function showWindow(windowId) { //showing a window
+  const window = document.getElementById(windowId);
+  if (window) {
+      window.style.display = 'block';
+  }
+}
+
+document.querySelector('.nav-item:nth-child(1)').addEventListener('click', () => {
+  showWindow('window-notes');
+});
+
+document.querySelector('.nav-item:nth-child(2)').addEventListener('click', () => {
+  showWindow('window-links'); 
+});
+
+document.querySelector('.nav-item:nth-child(3)').addEventListener('click', () => {
+  showWindow('window-images');
+});
+
+document.querySelector('.nav-item:nth-child(4)').addEventListener('click', () => {
+  showWindow('window-sketch');
+});
+
+
+
